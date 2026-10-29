@@ -35,9 +35,20 @@ Schulungsangebot rund um den sicheren und produktiven Einsatz generativer KI in 
 | [kurs-ki-vergabe/curriculum.md](kurs-ki-vergabe/curriculum.md) | Vergabe-Ampel, Tagesablauf, Inhalte je Lerneinheit, Checkliste „KI beschaffen“, offene Punkte für die Abstimmung mit der Praxis |
 | [kurs-ki-vergabe/uebungen.md](kurs-ki-vergabe/uebungen.md) | Fallkarten, fünf Praxisübungen (Leistungsbeschreibung, Neutralitätscheck, Bewertungsmatrix, Bieterfrage, Vergabevermerk), Transferplan |
 
-### Website
+### Websites
 
-[../website/index.html](../website/index.html): Statische Marketing-Seite, ohne Build direkt hostbar (z. B. GitHub Pages oder Webspace). Vor dem Livegang: Platzhalter `[...]` ersetzen, `impressum.html` und `datenschutz.html` anlegen (Impressumspflicht), Domains `amtsklug.de` und `ki-in-der-verwaltung.de` (Weiterleitung) registrieren, Namen „Amtsklug“ im DPMA-Register prüfen. Hinweis zum Datenschutz: Die Seite lädt Schriften von Google Fonts; für den Livebetrieb die Schriften besser lokal einbinden.
+Zwei statische Websites, ohne Build direkt hostbar (Webspace oder GitHub Pages), beide „ein Angebot von simplydevelop“:
+
+| Ordner | Domain | Zielgruppe |
+|---|---|---|
+| [../website/amtsklug/](../website/amtsklug/) | `amtsklug.de` | Behörden und Kommunen |
+| [../website/kiklug/](../website/kiklug/) | `kiklug.de` | Unternehmen |
+
+Jede Site hat `index.html`, `ki-regelwerk.html` und eine eigene `style.css`. Vor dem Livegang: Platzhalter `[...]` ersetzen, `impressum.html` und `datenschutz.html` je Site anlegen, Domains registrieren (`amtsklug.de`, `kiklug.de`, `ki-klug.de`, `kiregelwerk.de`, `ki-in-der-verwaltung.de`; die letzten drei als Weiterleitung), Namen im DPMA-Register prüfen, Google Fonts lokal einbinden.
+
+### KI-Regelwerk
+
+[../ki-regelwerk/gliederung-muster.md](../ki-regelwerk/gliederung-muster.md): Projektablauf und Gliederung der Muster-Regelung (KI-Dienstanweisung für Behörden, KI-Richtlinie für Unternehmen) mit Leitfragen für den Workshop.
 
 ## Angebotsleiter
 

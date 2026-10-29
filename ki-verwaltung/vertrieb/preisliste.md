@@ -12,6 +12,8 @@
 | **Fachbereichs-Werkstatt** (Bürgerservice, Bauamt, Sozialamt, Personal …) | 1 Tag | bis 15 | 1.900 € |
 | **Train-the-Trainer** für KI-Lotsinnen und -Lotsen, inkl. Nutzungsrecht am Materialpaket für das Haus | 2 Tage | bis 10 | 3.900 € |
 | **Souveräne KI betreiben** (IT-Vertiefung) | 2 Tage | bis 12 | 4.600 € |
+| **KI-Regelwerk** (KI-Dienstanweisung): Bestandsaufnahme-Workshop ½ Tag, Entwurf, eine Abstimmungsrunde | Paket | – | 2.900 € |
+| **KI-Regelwerk plus Schulung** (Paket oben und ein Tag KI-Kompetenz auf Basis der neuen Regeln) | Paket | bis 15 | 4.300 € |
 
 Alle Preise pro Termin, nicht pro Person. Jede weitere Person über der Gruppengröße: 60 €.
 
