@@ -1,13 +1,13 @@
-# Deployment: Optiplex hinter IONOS-VPS
+# Deployment: Optiplex mit Traefik, IONOS-VPS als Zugang
 
 ```
-Internet ──► IONOS-VPS (TLS, Reverse-Proxy) ══WireGuard══► Optiplex :8088 ──► Container ki-websites (nginx)
-                                                                              ├─ amtsklug.de
-                                                                              ├─ kiklug.de
-                                                                              └─ Weiterleitungen
+Internet ──► IONOS-VPS ══WireGuard══► Optiplex: Traefik (TLS, Let's Encrypt) ──► Container ki-websites (nginx)
+                                                                                  ├─ amtsklug.de
+                                                                                  ├─ kiklug.de
+                                                                                  └─ Weiterleitungen
 ```
 
-Ein Container liefert beide Sites aus und unterscheidet sie am Hostnamen. Die Zusatzdomains leitet er weiter:
+Traefik übernimmt Routing und Zertifikate. Der Container `ki-websites` braucht keinen veröffentlichten Port; er hängt im Docker-Netzwerk von Traefik und wird über Labels eingebunden. nginx im Container unterscheidet die Sites am Hostnamen und leitet die Zusatzdomains weiter:
 
 | Domain | Ziel |
 |---|---|
@@ -19,61 +19,69 @@ Ein Container liefert beide Sites aus und unterscheidet sie am Hostnamen. Die Zu
 
 ## 1. DNS bei IONOS
 
-Für jede Domain zwei A-Records auf die öffentliche IP des VPS: `@` und `www`. Falls der VPS IPv6 hat, zusätzlich AAAA-Records.
+Für jede Domain zwei A-Records auf die öffentliche IP des VPS: `@` und `www`, genau wie bei Ihren bestehenden Sites.
 
-## 2. Optiplex: Container starten
+## 2. VPS prüfen
 
-Das Repository auf den Optiplex holen und den Container starten:
+Leitet der VPS die Ports 80 und 443 pauschal durch den Tunnel weiter (z. B. per iptables-DNAT oder nginx `stream` ohne Hostliste), ist nichts zu tun. Führt er eine Liste von Hostnamen (SNI-Map), die neuen Domains dort ergänzen.
+
+## 3. Optiplex: Werte an Traefik anpassen
+
+Die Namen von Netzwerk, Entrypoint und Zertifikats-Resolver aus Ihrer bestehenden Traefik-Konfiguration ablesen, zum Beispiel an den Labels einer laufenden Site:
+
+```bash
+docker inspect <bestehender-container> --format '{{json .Config.Labels}}'
+```
+
+```bash
+docker network ls
+```
+
+Weichen sie von den Standardwerten (`proxy`, `websecure`, `letsencrypt`) ab, eine Datei `website/deploy/.env` anlegen:
+
+```
+TRAEFIK_NETWORK=traefik_default
+ENTRYPOINT=https
+CERTRESOLVER=le
+```
+
+## 4. Container starten
 
 ```bash
 git clone https://github.com/goetzingert/trainings.git ~/trainings
 ```
 
 ```bash
-cd ~/trainings/website/deploy && WG_IP=10.8.0.2 docker compose up -d
+cd ~/trainings/website/deploy && docker compose up -d
 ```
 
-`10.8.0.2` durch die WireGuard-Adresse des Optiplex ersetzen. Test vom VPS aus:
+Konfiguration im Container prüfen:
 
 ```bash
-curl -H "Host: amtsklug.de" http://10.8.0.2:8088/ | head -5
+docker exec ki-websites nginx -t
 ```
 
-**Aktualisieren:** Die Dateien sind nur eingehängt, ein `git pull` genügt, kein Neustart nötig.
+Traefik holt die Zertifikate beim ersten Aufruf jeder Domain; das kann einige Sekunden dauern. Im Traefik-Log sieht man, ob es geklappt hat:
+
+```bash
+docker logs <traefik-container> 2>&1 | grep -i -E "acme|amtsklug|kiklug"
+```
+
+**HTTP auf HTTPS:** Die Labels binden nur den HTTPS-Entrypoint. Leitet Ihr Traefik `web` (Port 80) bereits global auf HTTPS um, ist das abgedeckt; sonst wie bei den bestehenden Sites einen Redirect-Router ergänzen.
+
+## Aktualisieren
+
+Die Dateien sind nur eingehängt, ein `git pull` genügt, kein Neustart nötig:
 
 ```bash
 cd ~/trainings && git pull
 ```
 
-Nur nach Änderungen an `nginx.conf` den Container neu laden:
+Nur nach Änderungen an `nginx.conf`:
 
 ```bash
 docker exec ki-websites nginx -s reload
 ```
-
-## 3. VPS: Reverse-Proxy und Zertifikate
-
-**Mit nginx:** Die Datei `vps-nginx.conf.example` nach `/etc/nginx/sites-available/ki-websites` kopieren, die WireGuard-Adresse anpassen, aktivieren und Zertifikate holen:
-
-```bash
-sudo ln -s /etc/nginx/sites-available/ki-websites /etc/nginx/sites-enabled/ && sudo nginx -t && sudo systemctl reload nginx
-```
-
-```bash
-sudo certbot --nginx -d amtsklug.de -d www.amtsklug.de -d kiklug.de -d www.kiklug.de -d ki-klug.de -d www.ki-klug.de -d kiregelwerk.de -d www.kiregelwerk.de -d ki-in-der-verwaltung.de -d www.ki-in-der-verwaltung.de
-```
-
-Certbot ergänzt den HTTPS-Block und die Weiterleitung von HTTP auf HTTPS selbst.
-
-**Mit Caddy** (holt Zertifikate automatisch), im Caddyfile:
-
-```
-amtsklug.de, www.amtsklug.de, kiklug.de, www.kiklug.de, ki-klug.de, www.ki-klug.de, kiregelwerk.de, www.kiregelwerk.de, ki-in-der-verwaltung.de, www.ki-in-der-verwaltung.de {
-    reverse_proxy 10.8.0.2:8088
-}
-```
-
-**Mit Nginx Proxy Manager oder Traefik:** je Domain einen Proxy-Host auf `10.8.0.2:8088` anlegen; wichtig ist nur, dass der Host-Header unverändert weitergegeben wird (Standard bei beiden).
 
 ## Vor dem Livegang
 
