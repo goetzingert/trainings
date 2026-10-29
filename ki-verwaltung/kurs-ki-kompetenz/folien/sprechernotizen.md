@@ -92,7 +92,7 @@ Ein typischer Erfolgsfall. Wichtig ist die letzte Zeile im Prompt: „Inhalt, Da
 
 ## Folie 23: Bessere Ergebnisse mit wenig Aufwand
 
-Beispiel mitgeben ist der stärkste Hebel für den Ton des Hauses: Ein anonymisiertes Musterschreiben sagt mehr als jede Beschreibung. Rückfragen erlauben verhindert, dass die KI Lücken mit Erfundenem füllt. In Schritten arbeiten hilft bei langen Texten wie Vorlagen und Konzepten. Live zeigen, wenn Zeit ist: denselben Auftrag mit und ohne „Stell mir zuerst Fragen“.
+Beispiel mitgeben ist der stärkste Hebel für den Ton des Hauses: Ein anonymisiertes Musterschreiben sagt mehr als jede Beschreibung. Rückfragen erlauben verhindert, dass die KI Lücken mit Erfundenem füllt. In Schritten arbeiten hilft bei langen Texten wie Vorlagen und Konzepten. Verhalten vorgeben: Ohne Anweisung antwortet die KI gefällig und selbstsicher. Wer ausdrücklich um Hinweise auf Unsicherheit und Schwächen bittet, bekommt ehrlichere Antworten; das ersetzt das Prüfen aber nicht. Live zeigen, wenn Zeit ist: denselben Auftrag mit und ohne „Stell mir zuerst Fragen“.
 
 ## Folie 24: Weiterarbeiten statt neu anfangen
 
@@ -134,18 +134,22 @@ Viele Häuser haben dazu noch keine Regel. Nicht erfinden, sondern als Frage sam
 
 Auflösung: Text A enthält eine falsche Frist (zwei Wochen statt ein Monat) und ein erfundenes Gesetz. Text B enthält eine falsche Zahl (30 statt 22 Parkplätze), einen Widerspruch zum Original (Begrünung) und eine Empfehlung, die die Bitten des Ortsbeirats weglässt. Text C enthält eine Altersdiskriminierung und einen zu saloppen Ton. Wer alle sieben findet, hat gewonnen. Lösungstabelle im Dokument mit den Übungsblättern.
 
-## Folie 34: Mein Transfer
+## Folie 34: Vier Kompetenzen, die Sie heute geübt haben
+
+Kurze Einordnung zum Abschluss von LE 5, höchstens drei Minuten. Für Teilnehmende ist das eine Zusammenfassung des Tages in vier Worten: abgeben, beschreiben, beurteilen, verantworten. Für Auftraggeber zeigt es, dass die Schulung auf einem anerkannten Rahmen aufbaut. Wer mehr will: Der Kurs „AI Fluency: Framework &amp; Foundations“ der Anthropic Academy ist auf Englisch und kostenlos.
+
+## Folie 35: Mein Transfer
 
 Letzte Einheit: vom Ausprobieren zur Gewohnheit. Ziel ist, dass jede Person drei konkrete Anwendungsfälle mitnimmt.
 
-## Folie 35: Drei Aufgaben, die ich ab morgen mit KI angehe
+## Folie 36: Drei Aufgaben, die ich ab morgen mit KI angehe
 
 Jede Person füllt das Übungsblatt aus. Danach drei bis vier Freiwillige stellen einen Fall vor. Prompts einsammeln (Foto oder abtippen lassen) und nach der Schulung als Prompt-Sammlung an die Auftraggeber schicken. Offene Fragen an Datenschutz, IT oder Leitung sammeln und übergeben. Die Sorgen-Karten vom Morgen kurz wieder aufgreifen: Was ist jetzt anders?
 
-## Folie 36: Damit es im Alltag hält
+## Folie 37: Damit es im Alltag hält
 
 Der Transfer scheitert selten am Können, sondern am Alltag. Konkrete Verabredungen helfen: Wer übernimmt die Prompt-Sammlung im Team? Wann ist der erste Austausch? Hinweis auf Folgeangebote (Fachbereichs-Werkstatt, Train-the-Trainer für KI-Lotsen), aber ohne Verkaufsdruck.
 
-## Folie 37: Drei Merksätze
+## Folie 38: Drei Merksätze
 
 Feedbackbogen austeilen, Teilnahmebescheinigungen übergeben oder ankündigen. Dank an die Gruppe. Hinweis auf Folgeangebote: Fachbereichs-Werkstatt, Führungskräfte-Kompakt, KI in der Vergabestelle.

@@ -174,11 +174,13 @@ Grundlage ist die Stellungnahme des Ortsbeirats Nord auf Übungsblatt 5.
 
 **Auftrag:** Drei Aufgaben aus Ihrem Arbeitsalltag, die Sie ab morgen mit KI angehen. **Zeit:** 25 Minuten. Dieses Blatt nehmen Sie mit.
 
-| Nr. | Aufgabe aus meinem Alltag | Ampel | Mein Prompt (R-A-K-F) | Was ich prüfen muss (F-A-K-T) |
-| --- | --- | --- | --- | --- |
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+Prüfen Sie zuerst für jede Aufgabe: **Lohnt sich KI hier?** Dauert das Prüfen länger als selbst schreiben, lieber selbst schreiben.
+
+| Nr. | Aufgabe aus meinem Alltag | Lohnt sich KI? Warum? | Ampel | Mein Prompt (R-A-K-F) | Was ich prüfen muss (F-A-K-T) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
 
 **Das probiere ich in den nächsten zwei Wochen aus:**
 

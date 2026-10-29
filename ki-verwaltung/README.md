@@ -12,7 +12,7 @@ Schulungsangebot rund um den sicheren und produktiven Einsatz generativer KI in 
 | [kurs-ki-kompetenz/uebungen.md](kurs-ki-kompetenz/uebungen.md) | Fallkarten (Ampel), sechs Praxisstationen, Fehlersuche, Transferplan |
 | [kurs-ki-kompetenz/handout-ampel.md](kurs-ki-kompetenz/handout-ampel.md) | Handout für Teilnehmende auf einer Seite: Ampel-Regel, R-A-K-F, F-A-K-T |
 | [kurs-ki-kompetenz/teilnahmebescheinigung.md](kurs-ki-kompetenz/teilnahmebescheinigung.md) | Vorlage für den Nachweis der KI-Kompetenz (Art. 4 KI-VO) |
-| [kurs-ki-kompetenz/folien/KI-Kompetenz-Verwaltung-Folien.pdf](kurs-ki-kompetenz/folien/KI-Kompetenz-Verwaltung-Folien.pdf) | Foliensatz (37 Folien) als PDF zum Präsentieren und Drucken |
+| [kurs-ki-kompetenz/folien/KI-Kompetenz-Verwaltung-Folien.pdf](kurs-ki-kompetenz/folien/KI-Kompetenz-Verwaltung-Folien.pdf) | Foliensatz (38 Folien) als PDF zum Präsentieren und Drucken |
 | [kurs-ki-kompetenz/folien/sprechernotizen.md](kurs-ki-kompetenz/folien/sprechernotizen.md) | Sprechernotizen zu jeder Folie |
 | [kurs-ki-kompetenz/folien/](kurs-ki-kompetenz/folien/) | Quelldateien des Foliensatzes (`deck.json` und je Folie eine HTML-Datei); die bearbeitbare Fassung mit PowerPoint-Export liegt als Slides-Artifact auf claude.ai |
 | [kurs-ki-kompetenz/uebungsblaetter.md](kurs-ki-kompetenz/uebungsblaetter.md) | Übungsblätter 1–11 für Teilnehmende plus Lösungen für Trainer |
