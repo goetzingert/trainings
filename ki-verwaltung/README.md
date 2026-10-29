@@ -24,6 +24,9 @@ Schulungsangebot rund um den sicheren und produktiven Einsatz generativer KI in 
 |---|---|
 | [vertrieb/seminarbeschreibung.md](vertrieb/seminarbeschreibung.md) | Kurz- und Langtext für Kataloge von Verwaltungsakademien und Studieninstituten, Anschlussangebote |
 | [vertrieb/onepager-it-dienstleister.md](vertrieb/onepager-it-dienstleister.md) | Angebot auf einer Seite für kommunale IT-Dienstleister und IT-Abteilungen |
+| [vertrieb/preisliste.md](vertrieb/preisliste.md) | Preise aller Formate, Konditionen, Reisekosten, Absagebedingungen |
+| [vertrieb/angebotsvorlage.md](vertrieb/angebotsvorlage.md) | Angebotsvorlage für Behörden mit Leistungsbeschreibung, Preistabelle, USt-Varianten und Bedingungen |
+| [vertrieb/bestaetigung-ust-befreiung.md](vertrieb/bestaetigung-ust-befreiung.md) | Entwurf: Bestätigung der Behörde zur Umsatzsteuerbefreiung nach § 4 Nr. 21 UStG (mit Steuerberater abstimmen) |
 
 ### Aufbaukurs „KI in der Vergabestelle“ (1 Tag, Entwurf)
 
