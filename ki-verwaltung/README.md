@@ -29,7 +29,7 @@ Schulungsangebot rund um den sicheren und produktiven Einsatz generativer KI in 
 
 ### Website
 
-[../website/index.html](../website/index.html): Statische Marketing-Seite, ohne Build direkt hostbar (z. B. GitHub Pages oder Webspace). Vor dem Livegang: Platzhalter `[...]` ersetzen, `impressum.html` und `datenschutz.html` anlegen (Impressumspflicht), Namen „KI im Amt“ und Domain auf Verfügbarkeit und Markenrechte prüfen. Hinweis zum Datenschutz: Die Seite lädt Schriften von Google Fonts; für den Livebetrieb die Schriften besser lokal einbinden.
+[../website/index.html](../website/index.html): Statische Marketing-Seite, ohne Build direkt hostbar (z. B. GitHub Pages oder Webspace). Vor dem Livegang: Platzhalter `[...]` ersetzen, `impressum.html` und `datenschutz.html` anlegen (Impressumspflicht), Domains `amtsklug.de` und `ki-in-der-verwaltung.de` (Weiterleitung) registrieren, Namen „Amtsklug“ im DPMA-Register prüfen. Hinweis zum Datenschutz: Die Seite lädt Schriften von Google Fonts; für den Livebetrieb die Schriften besser lokal einbinden.
 
 ## Angebotsleiter
 
