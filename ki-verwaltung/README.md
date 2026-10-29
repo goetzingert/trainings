@@ -44,7 +44,7 @@ Zwei statische Websites, ohne Build direkt hostbar (Webspace oder GitHub Pages),
 | [../website/amtsklug/](../website/amtsklug/) | `amtsklug.de` | Behörden und Kommunen |
 | [../website/kiklug/](../website/kiklug/) | `kiklug.de` | Unternehmen |
 
-Jede Site hat `index.html`, `ki-regelwerk.html` und eine eigene `style.css`. Vor dem Livegang: Platzhalter `[...]` ersetzen, `impressum.html` und `datenschutz.html` je Site anlegen, Domains registrieren (`amtsklug.de`, `kiklug.de`, `ki-klug.de`, `kiregelwerk.de`, `ki-in-der-verwaltung.de`; die letzten drei als Weiterleitung), Namen im DPMA-Register prüfen, Google Fonts lokal einbinden.
+Jede Site hat `index.html`, `ki-regelwerk.html` und eine eigene `style.css`. Deployment (Docker auf dem Optiplex, Reverse-Proxy auf dem VPS): [../website/deploy/README.md](../website/deploy/README.md). Vor dem Livegang: Platzhalter `[...]` ersetzen, `impressum.html` und `datenschutz.html` je Site anlegen, Domains registrieren (`amtsklug.de`, `kiklug.de`, `ki-klug.de`, `kiregelwerk.de`, `ki-in-der-verwaltung.de`; die letzten drei als Weiterleitung), Namen im DPMA-Register prüfen, Google Fonts lokal einbinden.
 
 ### KI-Regelwerk
 

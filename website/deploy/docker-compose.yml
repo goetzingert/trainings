@@ -1,0 +1,18 @@
+# Startet die Websites Amtsklug und KI-klug auf dem Optiplex.
+# Aufruf aus diesem Ordner: docker compose up -d
+#
+# WG_IP = WireGuard-Adresse des Optiplex (z. B. 10.8.0.2). So ist der
+# Container nur über den Tunnel erreichbar, nicht aus dem Heimnetz.
+# Ohne Angabe lauscht er auf allen Schnittstellen.
+
+services:
+  ki-websites:
+    image: nginx:1.27-alpine
+    container_name: ki-websites
+    restart: unless-stopped
+    ports:
+      - "${WG_IP:-0.0.0.0}:8088:80"
+    volumes:
+      - ../amtsklug:/usr/share/nginx/html/amtsklug:ro
+      - ../kiklug:/usr/share/nginx/html/kiklug:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
