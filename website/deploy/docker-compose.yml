@@ -1,38 +1,18 @@
-# Startet die Websites Amtsklug und KI-klug auf dem Optiplex hinter Traefik.
+# Startet die Websites Amtsklug und KI-klug auf dem Optiplex.
 # Aufruf aus diesem Ordner: docker compose up -d
 #
-# Anpassen an Ihre Traefik-Konfiguration (oder per .env-Datei setzen):
-#   TRAEFIK_NETWORK  Docker-Netzwerk, in dem Traefik läuft       (Standard: proxy)
-#   ENTRYPOINT       HTTPS-Entrypoint von Traefik                (Standard: websecure)
-#   CERTRESOLVER     Name des Let's-Encrypt-Resolvers in Traefik (Standard: letsencrypt)
+# Der Container lauscht nur auf 127.0.0.1:8090. Traefik routet über die
+# Datei traefik-ki-websites.yml (File-Provider) dorthin, ohne Docker-Socket.
+# Ist 8090 schon belegt, hier und in der Traefik-Datei denselben Port ändern.
 
 services:
   ki-websites:
     image: nginx:1.27-alpine
     container_name: ki-websites
     restart: unless-stopped
+    ports:
+      - "127.0.0.1:8090:80"
     volumes:
       - ../amtsklug:/usr/share/nginx/html/amtsklug:ro
       - ../kiklug:/usr/share/nginx/html/kiklug:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    networks:
-      - proxy
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
-      - traefik.http.services.ki-websites.loadbalancer.server.port=80
-      # Amtsklug und Weiterleitungsdomain für Behörden
-      - traefik.http.routers.amtsklug.rule=Host(`amtsklug.de`) || Host(`www.amtsklug.de`) || Host(`ki-in-der-verwaltung.de`) || Host(`www.ki-in-der-verwaltung.de`)
-      - traefik.http.routers.amtsklug.entrypoints=${ENTRYPOINT:-websecure}
-      - traefik.http.routers.amtsklug.tls.certresolver=${CERTRESOLVER:-letsencrypt}
-      - traefik.http.routers.amtsklug.service=ki-websites
-      # KI-klug und Weiterleitungsdomains für Unternehmen
-      - traefik.http.routers.kiklug.rule=Host(`kiklug.de`) || Host(`www.kiklug.de`) || Host(`ki-klug.de`) || Host(`www.ki-klug.de`) || Host(`kiregelwerk.de`) || Host(`www.kiregelwerk.de`)
-      - traefik.http.routers.kiklug.entrypoints=${ENTRYPOINT:-websecure}
-      - traefik.http.routers.kiklug.tls.certresolver=${CERTRESOLVER:-letsencrypt}
-      - traefik.http.routers.kiklug.service=ki-websites
-
-networks:
-  proxy:
-    name: ${TRAEFIK_NETWORK:-proxy}
-    external: true

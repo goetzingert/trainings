@@ -1,0 +1,40 @@
+http:
+  routers:
+    amtsklug:
+      rule: "Host(`amtsklug.de`) || Host(`www.amtsklug.de`) || Host(`ki-in-der-verwaltung.de`) || Host(`www.ki-in-der-verwaltung.de`)"
+      entryPoints:
+        - websecure
+      service: ki-websites
+      tls:
+        certResolver: le-ionos
+        domains:
+          - main: "amtsklug.de"
+            sans:
+              - "www.amtsklug.de"
+              - "ki-in-der-verwaltung.de"
+              - "www.ki-in-der-verwaltung.de"
+
+    kiklug:
+      rule: "Host(`kiklug.de`) || Host(`www.kiklug.de`) || Host(`ki-klug.de`) || Host(`www.ki-klug.de`) || Host(`kiregelwerk.de`) || Host(`www.kiregelwerk.de`)"
+      entryPoints:
+        - websecure
+      service: ki-websites
+      tls:
+        certResolver: le-ionos
+        domains:
+          - main: "kiklug.de"
+            sans:
+              - "www.kiklug.de"
+              - "ki-klug.de"
+              - "www.ki-klug.de"
+              - "kiregelwerk.de"
+              - "www.kiregelwerk.de"
+
+  services:
+    ki-websites:
+      loadBalancer:
+        # Host-Header durchreichen: nginx im Container unterscheidet daran die Sites
+        passHostHeader: true
+        servers:
+          # Container ki-websites (127.0.0.1:8090 -> 80), siehe website/deploy/docker-compose.yml
+          - url: "http://127.0.0.1:8090"
